@@ -35,6 +35,7 @@ jobs:
             
           sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin
           sudo apt-get update
+          sudo docker login --username dwip23 --password 12@Google
           sudo docker pull nginx:latest
           sudo docker tag nginx:latest dwip23/argocd-nginx:v1
           sudo docker push dwip23/argocd-nginx:v1
