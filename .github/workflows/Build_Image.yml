@@ -39,3 +39,9 @@ jobs:
           sudo docker pull nginx:latest
           sudo docker tag nginx:latest dwip23/argocd-nginx:v1
           sudo docker push dwip23/argocd-nginx:v1
+
+      - name: Build Iamge
+        run: |
+          git clone https://hazradwip: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@github.com/hazradwip/argocd-example-apps.git
+          cd helm-guestbook
+          
