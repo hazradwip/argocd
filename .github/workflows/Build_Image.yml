@@ -50,7 +50,7 @@ jobs:
           cd helm-guestbook
           yq e -i '.image.repository = "dwip23/argocd-nginx"' values.yaml
           yq e -i '.image.tag = "v1"' values.yaml
-          cat values.yaml
+          cd ..
           git config --global user.email "hazradwip@gmail.com"
           git config --global user.name "hazradwip"
           git config --global user.password "23$Dwip@GITHUB$23"
