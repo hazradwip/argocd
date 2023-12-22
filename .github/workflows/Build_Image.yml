@@ -46,6 +46,8 @@ jobs:
           sudo apt update
           sudo apt install yq -y
           git clone https://hazradwip:${{secrets.ACCESS_TOKEN}}@github.com/hazradwip/argocd-example-apps.git
+          ls
+          pwd
           cd helm-guestbook
           ls
           
