@@ -56,4 +56,4 @@ jobs:
           git config --global user.password "23$Dwip@GITHUB$23"
           git add .
           git commit -m "New Version Released"
-          git push origin main
+          git push origin master
