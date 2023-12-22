@@ -51,6 +51,9 @@ jobs:
           yq e -i '.image.repository = "dwip23/argocd-nginx"' values.yaml
           yq e -i '.image.tag = "v1"' values.yaml
           cat values.yaml
+          git config --global user.email "hazradwip@gmail.com"
+          git config --global user.name "hazradwip"
+          git config --global user.password "23$Dwip@GITHUB$23"
           git add .
           git commit -m "New Version Released"
-          git push https://hazradwip:${{secrets.ACCESS_TOKEN}}@github.com/hazradwip/argocd-example-apps.git
+          git push origin main
