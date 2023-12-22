@@ -18,7 +18,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a set of commands using the runners shell
-      - name: Build Iamge
+      - name: Build Image
         run: |
           sudo apt update
           # Add Docker's official GPG key:
@@ -40,16 +40,15 @@ jobs:
           sudo docker tag nginx:latest dwip23/argocd-nginx:v1
           sudo docker push dwip23/argocd-nginx:v1
 
-      - name: Build Iamge
+      - name: Change Image Tag in yml file.
         run: |
           sudo add-apt-repository ppa:rmescandon/yq
           sudo apt update
           sudo apt install yq -y
           git clone https://hazradwip:${{secrets.ACCESS_TOKEN}}@github.com/hazradwip/argocd-example-apps.git
-          ls
-          pwd
           cd argocd-example-apps
-          ls
           cd helm-guestbook
-          ls
+          yq e -i '.image.repository = "dwip23/argocd-nginx"' values.yaml
+          yq e -i '.image.tag = "v1"' values.yaml
+          cat values.yaml
           
