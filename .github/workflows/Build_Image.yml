@@ -48,6 +48,8 @@ jobs:
           git clone https://hazradwip:${{secrets.ACCESS_TOKEN}}@github.com/hazradwip/argocd-example-apps.git
           ls
           pwd
+          cd argocd-example-apps
+          ls
           cd helm-guestbook
           ls
           
