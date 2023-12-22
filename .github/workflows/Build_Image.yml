@@ -51,4 +51,6 @@ jobs:
           yq e -i '.image.repository = "dwip23/argocd-nginx"' values.yaml
           yq e -i '.image.tag = "v1"' values.yaml
           cat values.yaml
-          
+          git add .
+          git commit -m "New Version Released"
+          git push https://hazradwip:${{secrets.ACCESS_TOKEN}}@github.com/hazradwip/argocd-example-apps.git
