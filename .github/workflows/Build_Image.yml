@@ -37,8 +37,8 @@ jobs:
           sudo apt-get update
           sudo docker login --username dwip23 --password 12@Google
           sudo docker pull nginx:latest
-          sudo docker tag nginx:latest dwip23/argocd-nginx:v1
-          sudo docker push dwip23/argocd-nginx:v1
+          sudo docker tag nginx:latest dwip23/argocd-nginx:v2
+          sudo docker push dwip23/argocd-nginx:v2
 
       - name: Change Image Tag in yml file.
         run: |
@@ -49,8 +49,7 @@ jobs:
           cd argocd-example-apps
           cd helm-guestbook
           yq e -i '.image.repository = "dwip23/argocd-nginx"' values.yaml
-          yq e -i '.image.tag = "v1"' values.yaml
-          cd ..
+          yq e -i '.image.tag = "v2"' values.yaml
           git config --global user.email "hazradwip@gmail.com"
           git config --global user.name "hazradwip"
           git config --global user.password "23$Dwip@GITHUB$23"
